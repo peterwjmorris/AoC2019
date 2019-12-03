@@ -1,0 +1,14 @@
+{
+  "name": "Aoc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "lodash": "^4.17.15",
+    "parjs": "0.12.2"
+  },
+  "scripts": {
+    "two": "node -r esm two/two.js"
+  }
+}
