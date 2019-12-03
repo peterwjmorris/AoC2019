@@ -1,5 +1,5 @@
 {
-  "name": "Aoc",
+  "name": "aoc",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "parjs": "0.12.2"
   },
   "scripts": {
-    "two": "node -r esm two/two.js"
+    "two": "node -r esm two/two.js",
+    "three": "node -r esm three/three.1.js"
   }
 }
