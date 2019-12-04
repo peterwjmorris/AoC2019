@@ -10,6 +10,6 @@
   },
   "scripts": {
     "two": "node -r esm two/two.js",
-    "three": "node -r esm three/three.1.js"
+    "three": "node -r esm three/three.2.js"
   }
 }
