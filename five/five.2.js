@@ -51,6 +51,46 @@ const instructions = {
             outputs
         };
     },
+    "05": (modes, { program, pc, inputs, outputs }) => {
+        const pcp = !getValAt(program, program[pc + 1], modes[0]) ? (pc + 3) : getValAt(program, program[pc + 2], modes[1]);
+        return {
+            runnable: true,
+            program,
+            pc: pcp,
+            inputs,
+            outputs
+        };
+    },
+    "06": (modes, { program, pc, inputs, outputs }) => {
+        const pcp = !!getValAt(program, program[pc + 1], modes[0]) ? (pc + 3) : getValAt(program, program[pc + 2], modes[1]);
+        return {
+            runnable: true,
+            program,
+            pc: pcp,
+            inputs,
+            outputs
+        };
+    },
+    "07": (modes, { program, pc, inputs, outputs }) => {
+        program[program[pc + 3]] = getValAt(program, program[pc + 1], modes[0]) < getValAt(program, program[pc + 2], modes[1]) ? 1 : 0;
+        return {
+            runnable: true,
+            program,
+            pc: pc + 4,
+            inputs,
+            outputs
+        };
+    },
+    "08": (modes, { program, pc, inputs, outputs }) => {
+        program[program[pc + 3]] = getValAt(program, program[pc + 1], modes[0]) == getValAt(program, program[pc + 2], modes[1]) ? 1 : 0;
+        return {
+            runnable: true,
+            program,
+            pc: pc + 4,
+            inputs,
+            outputs
+        };
+    },
     "99": (modes, { program, pc, inputs, outputs }) => {
         return {
             runnable: false,
@@ -77,7 +117,7 @@ const step = ({ program, pc, inputs, outputs }) => {
 fs.readFile("five/five.input", "utf8", (err, data) => {
     let program = manySepBy(",")(int()).parse(data).value;
 
-    let state = { program, pc: 0, inputs: [1], outputs: [], runnable: true }
+    let state = { program, pc: 0, inputs: [5], outputs: [], runnable: true }
 
     while (state.runnable) {
         state = step(state);
