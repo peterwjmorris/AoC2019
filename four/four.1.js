@@ -8,13 +8,10 @@ const testPass = (v) => {
     var hasDouble = false;
     var ascending = true;
 
-    var cur = -1;
-
     for (var i = 0; i < 6; i++) {
-        if (cur == strv[i]) hasDouble = true;
-        if (strv[i] < cur) ascending = false;
-
-        cur = strv[i];
+        hasDouble = hasDouble || (strv[i-1] == strv[i]);
+        ascending = ascending && !(strv[i-1] != null && strv[i] < strv[i-1]);
+        if (!ascending) break;
     }
     
     return (hasDouble && ascending);
