@@ -11,7 +11,7 @@ const getPos = (program, inx, mode, relativeBase) => {
         case 1:
             return inx;
         case 2:
-            return program[inx] + relativeBase;
+            return relativeBase + program[inx];
     }
 };
 
@@ -134,7 +134,7 @@ const instructions = {
         };
     },
     "09": (modes, { program, pc, relativeBase, inputs, outputs }) => {
-        relativeBase += getValAt(program, pc + 1, modes[0]);
+        relativeBase += getValAt(program, pc + 1, modes[0], relativeBase);
         return {
             runnable: true,
             relativeBase,
