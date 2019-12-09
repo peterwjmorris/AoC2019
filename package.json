@@ -14,6 +14,6 @@
     "four": "node -r esm four/four.1.js",
     "five": "node -r esm five/five.2.js",
     "seven": "node -r esm seven/seven.2.js",
-    "nine": "node -r esm nine/nine.2.js"
+    "eight": "node -r esm eight/eight.2.js"
   }
 }
