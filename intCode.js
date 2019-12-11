@@ -159,6 +159,7 @@ const instructions = {
 const step = ({ program, pc, inputs, outputs, relativeBase }) => {
     let instructionAndModes = program[pc].toString();
 
+
     instructionAndModes = _.repeat("0", 5 - instructionAndModes.length) + instructionAndModes;
 
     const instruction = instructions[instructionAndModes[3] + instructionAndModes[4]];
