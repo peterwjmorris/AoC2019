@@ -174,7 +174,7 @@ const step = ({ program, pc, inputs, outputs, relativeBase }) => {
 };
 
 export const runIntCode = (program, inputs) => {
-    let state = { program, pc: 0, inputs: inputs, outputs: [], runnable: true, relativeBase: 0 };
+    let state = makeInitState(program, inputs);
 
     while (state.runnable) {
         state = step(state);
@@ -184,9 +184,12 @@ export const runIntCode = (program, inputs) => {
 };
 
 export const runIntCodeABit = state => {
-    while (state.runnable && !state.needsMoreInput) {
+    while (state.runnable && !state.needsMoreInput) 
         state = step(state);
-    }
 
     return state;
 };
+
+export const makeInitState = (program, inputs) => {
+    return { program, pc: 0, inputs: inputs, outputs: [], runnable: true, relativeBase: 0 }
+}
