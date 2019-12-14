@@ -13,7 +13,7 @@ fs.readFile("thirteen/thirteen.input", "utf8", (err, data) => {
 
     const finalState = runIntCodeABit(initState);
 
-    const blocks = _.filter(finalState.outputs, (x,i) => (i % 3) == 2 && x == 2);
+    const blocks = _.filter(finalState.outputs, (x, i) => i % 3 == 2 && x == 2);
 
     console.log(blocks.length);
 });
