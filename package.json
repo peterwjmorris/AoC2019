@@ -20,6 +20,7 @@
         "eleven": "node -r esm eleven/eleven.2.js",
         "twelve": "node -r esm twelve/twelve.2.js",
         "thirteen": "node -r esm thirteen/thirteen.2.js",
-        "fourteen": "node -r esm fourteen/fourteen.2.js"
+        "fourteen": "node -r esm fourteen/fourteen.2.js",
+        "fifteen": "node -r esm fifteen/fifteen.2.js"
     }
 }
