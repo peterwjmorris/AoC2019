@@ -173,9 +173,7 @@ const step = ({ program, pc, inputs, outputs, relativeBase }) => {
     return instruction(modes, { program, pc, inputs, outputs, relativeBase });
 };
 
-export const runIntCode = (program, inputs) => {
-    let state = { program, pc: 0, inputs: inputs, outputs: [], runnable: true, relativeBase: 0 };
-
+export const runIntCode = state => {
     while (state.runnable) {
         state = step(state);
     }
