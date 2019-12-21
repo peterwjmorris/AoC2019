@@ -22,6 +22,7 @@
         "thirteen": "node -r esm thirteen/thirteen.2.js",
         "fourteen": "node -r esm fourteen/fourteen.2.js",
         "fifteen": "node -r esm fifteen/fifteen.2.js",
-        "sixteen": "node -r esm sixteen/sixteen.2.js"
+        "sixteen": "node -r esm sixteen/sixteen.2.js",
+        "twenty-one": "node -r esm twenty-one/twenty-one.2.js"
     }
 }
