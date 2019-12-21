@@ -1,4 +1,6 @@
 import _ from "lodash";
+import { int } from "parjs";
+import { manySepBy } from "parjs/combinators";
 
 const getValAt = (program, inx, mode, relativeBase) => {
     return program[getPos(program, inx, mode, relativeBase)] || 0;
@@ -14,7 +16,6 @@ const getPos = (program, inx, mode, relativeBase) => {
             return relativeBase + program[inx];
     }
 };
-
 
 const instructions = {
     "01": (modes, { program, pc, relativeBase, inputs, outputs }) => {
@@ -159,7 +160,6 @@ const instructions = {
 const step = ({ program, pc, inputs, outputs, relativeBase }) => {
     let instructionAndModes = program[pc].toString();
 
-
     instructionAndModes = _.repeat("0", 5 - instructionAndModes.length) + instructionAndModes;
 
     const instruction = instructions[instructionAndModes[3] + instructionAndModes[4]];
@@ -182,9 +182,17 @@ export const runIntCode = state => {
 };
 
 export const runIntCodeABit = state => {
-    while (state.runnable && !state.needsMoreInput) {
-        state = step(state);
-    }
+    while (state.runnable && !state.needsMoreInput) state = step(state);
 
     return state;
 };
+
+export const makeInitState = (program, inputs) => {
+    return { program, pc: 0, inputs: inputs, outputs: [], runnable: true, relativeBase: 0 };
+};
+
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+};
+
+export const parseIntCode = data => manySepBy(",")(int()).parse(data).value;

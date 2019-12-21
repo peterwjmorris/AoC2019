@@ -1,25 +1,27 @@
 {
-  "name": "aoc",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "esm": "^3.2.25",
-    "lodash": "^4.17.15",
-    "parjs": "0.12.2"
-  },
-  "scripts": {
-    "two": "node -r esm two/two.js",
-    "three": "node -r esm three/three.2.js",
-    "four": "node -r esm four/four.1.js",
-    "five": "node -r esm five/five.2.js",
-    "seven": "node -r esm seven/seven.2.js",
-    "eight": "node -r esm eight/eight.2.js",
-    "nine": "node -r esm nine/nine.2.js",
-    "eleven": "node -r esm eleven/eleven.2.js",
-    "seventeen": "node -r esm seventeen/seventeen.2.js",
-        "nineteen": "node -r esm nineteen/nineteen.1.js",
-        "twenty": "node -r esm twenty/twenty.2.js"
-
-  }
+    "name": "aoc",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "esm": "^3.2.25",
+        "iohook": "^0.6.2",
+        "lodash": "^4.17.15",
+        "parjs": "0.12.2"
+    },
+    "scripts": {
+        "two": "node -r esm two/two.js",
+        "three": "node -r esm three/three.2.js",
+        "four": "node -r esm four/four.1.js",
+        "five": "node -r esm five/five.2.js",
+        "seven": "node -r esm seven/seven.2.js",
+        "eight": "node -r esm eight/eight.2.js",
+        "nine": "node -r esm nine/nine.2.js",
+        "eleven": "node -r esm eleven/eleven.2.js",
+        "twelve": "node -r esm twelve/twelve.2.js",
+        "thirteen": "node -r esm thirteen/thirteen.2.js",
+        "fourteen": "node -r esm fourteen/fourteen.2.js",
+        "fifteen": "node -r esm fifteen/fifteen.2.js",
+        "sixteen": "node -r esm sixteen/sixteen.2.js"
+    }
 }
